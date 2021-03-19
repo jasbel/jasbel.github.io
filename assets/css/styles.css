@@ -1,0 +1,93 @@
+/* Variables  */
+/* Import */
+/* Custom Class */
+.title {
+  font-family: 'Raleway';
+  font-weight: bold;
+  font-size: 38px;
+  line-height: 45px;
+  color: #B44A04;
+}
+
+.subtitle {
+  font-family: 'Raleway';
+  font-weight: bold;
+  font-size: 32px;
+  line-height: 38px;
+  color: #011F33;
+}
+
+.description {
+  font-family: 'Open Sans';
+  font-weight: normal;
+  font-size: 22px;
+  line-height: 30px;
+  color: #011F33;
+}
+
+.line-right {
+  position: relative;
+}
+
+.line-right::before {
+  position: absolute;
+  right: 0;
+  top: 0;
+  bottom: 0;
+  margin: auto;
+  height: 100%;
+  width: 2px;
+}
+
+/* Header */
+/* Hero */
+/* Profile */
+.btn {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  padding: 15px 45px;
+  background-color: #046DB3;
+  border-radius: 60px;
+}
+
+.btn--primary {
+  background-color: #046DB3;
+  min-width: 357px;
+  min-height: 58px;
+}
+
+/* Sckiill and social */
+/* Skill */
+.skill__item-figure {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  width: 60;
+  height: 60;
+  border-radius: 50%;
+  background-color: #E8F6FF;
+}
+
+/* Social */
+/* Project */
+/* Portfolio */
+/* Contact */
+/* Footer */
+/*# sourceMappingURL=styles.css.map */
