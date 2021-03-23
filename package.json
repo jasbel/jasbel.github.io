@@ -4,8 +4,7 @@
   "description": "```JSON\r     \"liveSassCompile.settings.formats\": [\r         {\r             \"format\": \"expanded\",\r             \"extensionName\": \".css\",\r             \"savePath\": \"./assets/css\"\r         }\r     ],\r ```",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta2",
-    "node-sass": "^5.0.0"
+    "bootstrap": "^5.0.0-beta2"
   },
   "devDependencies": {},
   "scripts": {

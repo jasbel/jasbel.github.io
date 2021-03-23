@@ -1,0 +1,27 @@
+/* Header */
+.header {
+    background-color: $primary;
+    max-height: 100px;
+    >.container{
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+    &__figure {
+        max-width: 354px;
+        margin: 0;
+    }
+    &__navigation {
+        color: $light-text
+    }
+    &__nav {
+        display: flex;
+    }
+    &__nav-item {
+        display: block;
+        padding: 0 40px;
+        &:last-child {
+            padding-right: 0;
+        }
+    }
+}

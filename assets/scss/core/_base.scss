@@ -1,0 +1,97 @@
+
+html {
+    box-sizing: border-box;
+}
+*:not(img),
+*::before,
+*::after {
+    box-sizing: inherit;
+    margin: 0 auto;
+    padding: 0;
+}
+
+/* Custom Class */
+
+.heading {
+    color: $light-text;
+    text-transform: uppercase;
+    text-align: center;
+}
+.title {
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 38px;
+    line-height: 45px;
+    color: $orange-text;
+}
+.subtitle {
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 32px;
+    line-height: 38px;
+    color: $dark-text;
+}
+.subtitle-small {
+    font-family: 'Raleway';
+    font-weight: bold;
+    font-size: 24px;
+    line-height: 28px;
+}
+.description {
+    font-family: 'Open Sans';
+    font-weight: normal;
+    font-size: 22px;
+    line-height: 30px;
+    color: $dark-text;
+}
+
+.btn {
+    @extend  .subtitle-small;
+    line-height: 1;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    padding: 15px 45px;
+    border-radius: 60px;
+    text-transform: uppercase;
+
+    &--primary {
+        background-color: $primary;
+        color: $light-text;
+        min-width: 357px;
+        min-height: 58px;
+    }
+}
+
+.line-right {
+    position: relative;
+    &::before {
+        position: absolute;
+        right: 0;
+        top: 0;
+        bottom: 0;
+        margin: auto;
+        height: 100%;
+        width: 2px;
+
+    }
+}
+
+.ola {
+    position: relative;
+    width:100% ;
+    &__container {
+        position: relative;
+        width:100vw;
+        top: 0;
+    }
+}
+
+
+.form {
+    &__control {
+    }
+}
+.input {
+}
