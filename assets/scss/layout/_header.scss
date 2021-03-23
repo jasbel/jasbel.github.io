@@ -23,5 +23,13 @@
         &:last-child {
             padding-right: 0;
         }
+        a {
+            color: $light-text;
+            text-decoration: none;
+            &:hover {
+                color: $primary-text;
+                text-decoration: underline;
+            }
+        }
     }
 }

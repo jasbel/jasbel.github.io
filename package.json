@@ -1,14 +1,26 @@
 {
   "name": "Oficial-Portfolio",
   "version": "1.0.0",
-  "description": "```JSON\r     \"liveSassCompile.settings.formats\": [\r         {\r             \"format\": \"expanded\",\r             \"extensionName\": \".css\",\r             \"savePath\": \"./assets/css\"\r         }\r     ],\r ```",
+  "description": "",
   "main": "index.js",
   "dependencies": {
     "bootstrap": "^5.0.0-beta2"
   },
-  "devDependencies": {},
+  "devDependencies": {
+    "autoprefixer": "^9.7.0",
+    "browser-sync": "^2.26.14",
+    "cssnano": "^4.1.10",
+    "gulp": "^4.0.2",
+    "gulp-concat": "^2.6.1",
+    "gulp-postcss": "^8.0.0",
+    "gulp-replace": "^1.0.0",
+    "gulp-sass": "^4.0.2",
+    "gulp-sourcemaps": "^2.6.5",
+    "gulp-uglify": "^3.0.2"
+  },
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "serve": "serve -l 3000"
   },
   "repository": {
     "type": "git",

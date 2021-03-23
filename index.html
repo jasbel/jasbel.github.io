@@ -13,15 +13,17 @@
   <!-- header -->
   <header class="header">
     <div class="container">
-      <figure class="header__figure">
-        <img claas="header__logo" src="./assets/img/logo.svg" alt="logo">
-      </figure>
+      <a class="header__figure" href="/">
+        <figure class="header__figure">
+          <img claas="header__logo" src="./assets/img/logo.svg" alt="logo">
+        </figure>
+      </a>
       <nav class="header__navigation">
         <ul class="subtitle-small header__nav">
-          <li class="header__nav-item">Home</li>
-          <li class="header__nav-item">Development</li>
-          <li class="header__nav-item">Design</li>
-          <li class="header__nav-item">Contact</li>
+          <li class="header__nav-item"><a href="/">Home</a></li>
+          <li class="header__nav-item"><a href="/">Development</a></li>
+          <li class="header__nav-item"><a href="/">Design</a></li>
+          <li class="header__nav-item"><a href="/">Contact</a></li>
         </ul>
       </nav>
     </div>
@@ -230,7 +232,7 @@
       <form class="form contact__form">
         <div class="form__control">
           <label class="contact__label" for="email">
-            <input class="input contact__input" id="email" type="email">
+            <input class="input contact__input" id="email" type="email" placeholder="Correo Electronico">
           </label>
         </div>
         <div class="form__control">
@@ -242,40 +244,42 @@
 
   <!-- Footer -->
   <footer class="footer">
-    <figure class="footer__figure">
-      <img src="./assets/img/logo-name.svg" alt="logo" class="footer__image">
-    </figure>
-    <nav class="navigation footer__navigation">
-      <ul class="nav footer__nav">
-        <li>Principal</li>
-        <li>Development</li>
-        <li>Design</li>
-        <li>Contact</li>
-      </ul>
-    </nav>
-    <hr>
-    <div class="footer__footer">
-      <div class="footer__socials">
-        <a class="footer__social" href="https://jasbel.github.io/">
-          <img src="./assets/img/logo-icon.svg" alt="Oficial Page">
-        </a>
-        <a class="footer__social" href="https://www.facebook.com/asbel.apaza/">
-          <img src="./assets/img/facebook.svg" alt="facebook">
-        </a>
-        <a class="footer__social" href="https://www.linkedin.com/in/jasbel/">
-          <img src="./assets/img/linkedin.svg" alt="linkedin">
-        </a>
-        <a class="footer__social" href="https://github.com/jasbel">
-          <img src="./assets/img/github.svg" alt="github">
-        </a>
-        <a class="footer__social" href="https://www.youtube.com/channel/UCmgKhVVEt_SYVEkK4gd25lA">
-          <img src="./assets/img/youtube.svg" alt="youtube">
-        </a>
-      </div>
-      <div class="footer__copyright">
-        <span class="footer__copyright-text line-right">Terminos de Uso</span>
-        <span class="footer__copyright-text line-right">Privacidad</span>
-        <span class="footer__copyright-text">© JAsbel 2021</span>
+    <div class="container">
+      <figure class="footer__figure">
+        <img src="./assets/img/logo-name.svg" alt="logo" class="footer__image">
+      </figure>
+      <nav class="navigation footer__nav">
+        <ul>
+          <li><a href="/">Principal</a></li>
+          <li><a href="#!">Development</a></li>
+          <li><a href="#!">Design</a></li>
+          <li><a href="#!">Contact</a></li>
+        </ul>
+      </nav>
+      <hr>
+      <div class="footer__footer">
+        <div class="footer__socials">
+          <a class="footer__social" href="https://jasbel.github.io/">
+            <img class="img-fluid" src="./assets/img/logo-icon.svg" alt="Oficial Page">
+          </a>
+          <a class="footer__social" href="https://www.facebook.com/asbel.apaza/">
+            <img class="img-fluid" src="./assets/img/facebook.svg" alt="facebook">
+          </a>
+          <a class="footer__social" href="https://www.linkedin.com/in/jasbel/">
+            <img class="img-fluid" src="./assets/img/linkedin.svg" alt="linkedin">
+          </a>
+          <a class="footer__social" href="https://github.com/jasbel">
+            <img class="img-fluid" src="./assets/img/github.svg" alt="github">
+          </a>
+          <a class="footer__social" href="https://www.youtube.com/channel/UCmgKhVVEt_SYVEkK4gd25lA">
+            <img class="img-fluid" src="./assets/img/youtube.svg" alt="youtube">
+          </a>
+        </div>
+        <div class="footer__copyright">
+          <span class="footer__copyright-text line-right">Terminos de Uso</span>
+          <span class="footer__copyright-text line-right">Privacidad</span>
+          <span class="footer__copyright-text">© JAsbel 2021</span>
+        </div>
       </div>
     </div>
   </footer>

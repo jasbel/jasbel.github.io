@@ -11,8 +11,13 @@
 @import "./core/base";
 
 // Components
-@import "./components/header";
-@import "./components/footer";
+@import "./components/buttons";
+@import "./components/form";
+
+//Layout
+@import "./layout/footer";
+@import "./layout/header";
+@import "./layout/hero";
 
 // View
 @import "./view/main";

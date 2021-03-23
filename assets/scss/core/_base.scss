@@ -5,8 +5,8 @@ html {
 *:not(img),
 *::before,
 *::after {
-    box-sizing: inherit;
-    margin: 0 auto;
+    box-sizing: border-box;
+    margin: 0;
     padding: 0;
 }
 
@@ -55,12 +55,15 @@ html {
     padding: 15px 45px;
     border-radius: 60px;
     text-transform: uppercase;
+    outline: none;
 
     &--primary {
         background-color: $primary;
         color: $light-text;
         min-width: 357px;
         min-height: 58px;
+        margin: auto;
+        margin-bottom: 30px;
     }
 }
 
@@ -80,7 +83,7 @@ html {
 
 .ola {
     position: relative;
-    width:100% ;
+    width:100vw ;
     &__container {
         position: relative;
         width:100vw;
@@ -88,10 +91,7 @@ html {
     }
 }
 
-
-.form {
-    &__control {
-    }
-}
-.input {
+.img-fluid {
+    max-width: 100%;
+    height: auto;
 }
