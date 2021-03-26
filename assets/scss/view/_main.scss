@@ -49,6 +49,7 @@
         }
     }
     &__btn {
+        @include mq(w, '100%', $md);
     }
 }
 
@@ -65,12 +66,16 @@
         @include mq('text-align', 'center', $md);
     }
     &__items {
+        max-width: 630px;
+        margin-right: 15px;
         @include responsive(pt, 35, 16);
         @include responsive(pb, 30, 16);
+        @include mq(mr, 0, $md);
     }
     &__item {
         display: flex;
         align-items: center;
+        justify-content: space-between;
         @include responsive(pt, 12, 6);
         @include responsive(pb, 12, 6);
     }
@@ -90,6 +95,8 @@
     &__item-title {
         margin-right: 16px;
         font-weight: bold;
+        min-width: 185px;
+        @include mq(minw, 100, $md);
         @include mq('display', 'none', $sm);
     }
     &__bar {
@@ -111,9 +118,12 @@
         height: 100%;
         width: 50%;
         text-align: right;
+        font-weight: bold;
         color: $dark-text;
         background-color: $green;
-        font-weight: bold;
+        color: darken($color: $green, $amount: 5);
+        @include responsive(fz, 12, 12);
+        @include responsive(lh, 30, 30);
         @include responsive(pr, 12, 6);
     }
 }
@@ -127,7 +137,7 @@
     &__items {
         @include responsive(pt, 35, 16);
         @include responsive(pb, 30, 16);
-        @include mq(maxw, 250, $md);
+        @include mq(maxw, 160, $md);
         @include mq('margin', 'auto', $md);
     }
     &__item {
@@ -143,7 +153,9 @@
         justify-content: center;
         align-items: center;
     }
-    &__item-image {}
+    &__item-image {
+        filter: invert(1);
+    }
     &__item-title {
         font-weight: bold;
     }
@@ -190,6 +202,11 @@
         @include responsive(ml, -45, -12);
         @include responsive(mr, -45, -12);
         @include responsive(mb, 24, 16);
+    }
+    &__item-iframe {
+        width: 100%;
+        height: 450px;
+        border: 1px solid rgba(0, 0, 0, 0.1);
     }
     &__item-image {}
     &__item-title {
