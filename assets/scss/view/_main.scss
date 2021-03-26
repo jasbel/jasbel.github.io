@@ -3,22 +3,26 @@
 /* Profile */
 .profile {
     background-color: $silver-bkg;
-    padding-top: 100px;
-    padding-bottom: 40px;
     position: relative;
+    padding-bottom: 40px;
+    @include responsive(pt, 100, 50);
 
     &__ola-container {
         position: absolute;
         bottom: 0;
+        top: auto;
         transform: translateY(100%);
     }
     &__figure {
         max-width: 300px;
         border-radius: 50%;
         overflow: hidden;
+        margin-bottom: 24px;
+        @include mq(ml, 'auto', $md);
+        @include mq(mr, 'auto', $md);
     }
     &__image {
-        width:100%;
+        width: 100%;
     }
     &__content {
 
@@ -36,6 +40,7 @@
             a {
                 text-decoration: none;
                 color: $dark-text;
+                @include mq('word-break', 'break-word', $md);
 
                 &:hover {
                     color: $primary;
@@ -49,31 +54,35 @@
 
 /* Sckiill and social */
 .skill-social {
-    padding-top: 140px;
-    padding-bottom: 50px;
+    @include responsive(pt, 140, 40);
+    @include responsive(pb, 50, 30);
 }
 
 /* Skill */
 .skill {
     &__title {
-        margin-bottom: 30px;
+        @include responsive(mb, 30, 16);
+        @include mq('text-align', 'center', $md);
     }
     &__items {
+        @include responsive(pt, 35, 16);
+        @include responsive(pb, 30, 16);
     }
     &__item {
         display: flex;
         align-items: center;
-        padding: 12px 0;
+        @include responsive(pt, 12, 6);
+        @include responsive(pb, 12, 6);
     }
     &__item-figure {
         display: flex;
         align-items: center;
         justify-content: center;
-        width: 60;
-        height: 60;
         border-radius: 50%;
         background-color: $light-bkg;
-        margin-right: 26px;
+        @include responsive(w,60, 48);
+        @include responsive(h,60, 48);
+        @include responsive(mr, 26, 12);
     }
     &__item-image {
         margin: 3px;
@@ -81,12 +90,13 @@
     &__item-title {
         margin-right: 16px;
         font-weight: bold;
+        @include mq('display', 'none', $sm);
     }
     &__bar {
         position: relative;
         height: 30px;
         border-radius: 15px;
-        background-color: $light-bkg;
+        background-color: $sky-blue;
         max-width: 500px;
         width: 100%;
         overflow: hidden;
@@ -99,32 +109,36 @@
         margin: auto;
         max-height: 100%;
         height: 100%;
-        width: 76%;
+        width: 50%;
         text-align: right;
         color: $dark-text;
         background-color: $green;
         font-weight: bold;
+        @include responsive(pr, 12, 6);
     }
 }
 
 /* Social */
 .social {
     &__title {
-        margin-bottom: 30px;
+        @include responsive(mb, 30, 16);
+        @include mq('text-align', 'center', $md);
     }
     &__items {
-        padding-top: 35px;
-        padding-bottom: 30px;
+        @include responsive(pt, 35, 16);
+        @include responsive(pb, 30, 16);
+        @include mq(maxw, 250, $md);
+        @include mq('margin', 'auto', $md);
     }
     &__item {
         display: flex;
-        padding: 13.5px 0;
-
+        @include responsive(pt, 13.5, 8);
+        @include responsive(pb, 13.5, 8);
     }
     &__item-figure {
         border-radius: 50%;
         background-color: $light-bkg;
-        margin-right: 20px;
+        @include responsive(mr, 20, 8);
         display: flex;
         justify-content: center;
         align-items: center;
@@ -138,49 +152,59 @@
 /* Project */
 .project {
     background-color: $light-bkg;
-    padding-top: 80px;
-    padding-bottom: 80px;
+    @include responsive(pt, 80, 40);
+    @include responsive(pb, 80, 40);
 
     &__title {
         text-align: center;
-        margin-bottom: 100px;
+        @include responsive(mb, 100, 30);
     }
     &__items {
         position: relative;
-        max-height: 900px;
+        max-height: 1000px;
         overflow: hidden;
-        margin-bottom: 50px;
+        @include responsive(mb, 70, 40);
         &:before {
             content:'';
             position: absolute;
             width: 100%;
             bottom: 0;
 
-            height: 80px;
+            @include responsive(h, 80, 40);
             box-shadow: inset 0 -80px 30px -40px $light-bkg;
         }
     }
     &__item {
         background-color: $white-bkg;
         border-radius: 15px;
+        @include responsive(br, 15, 10);
         overflow: hidden;
         padding: 12px;
         padding-top: 0;
-        margin-bottom: 30px;
+        padding:0 45px  30px;
+        @include responsive(pl, 45, 12);
+        @include responsive(pr, 45, 12);
+        @include responsive(mb, 40, 16);
     }
     &__item-figure {
-        margin-right: -12px;
-        margin-left: -12px;
+        @include responsive(ml, -45, -12);
+        @include responsive(mr, -45, -12);
+        @include responsive(mb, 24, 16);
     }
-    &__btn {
-    }
+    &__item-image {}
     &__item-title {
-        margin-bottom: 30px;
+        margin-bottom: 16px;
+        color: $dark-text;
     }
     &__item-description {
-        margin-bottom: 30px;
+        @include responsive(mb, 45, 30);
+    }
+    &__item-btn {
+        @include mq(minw, 'auto', $lg);
+        @include mq(w, '100%', $lg);
     }
     &__btn {
+        
     }
 }
 
@@ -190,7 +214,7 @@
     background-color: $dark-bkg;
     padding-bottom: 40px;
     &__ola-container {
-        margin-bottom: 70px;
+        margin-bottom: 50px;
         transform: scale(-1) rotate(0);
         background-color: $light-bkg;
     }
@@ -200,7 +224,7 @@
     }
     &__title {
         text-align: center;
-        margin-bottom: 30px;
+        margin-bottom: 16px;
         color: $light-text;
     }
     &__form {
@@ -209,6 +233,11 @@
         align-items: center;
         max-width: 1000px;
         margin: auto;
+        @include mq('flex-wrap', 'wrap', $lg);
+
+        .form__control {
+            @include mq(w, '100%', $md);
+        }
     }
     &__label {
         width: 100%;
@@ -217,10 +246,11 @@
         height: 58px;
         border-radius: 30px;
         min-width: 500px;
+        @include mq(minw, 'auto', $lg);
 
     }
     &__btn {
         min-width: auto;
-        margin-bottom: 0;
+        @include mq(w, '100%', $md);
     }
 }

@@ -1,14 +1,17 @@
 
 /* Footer */
 .footer {
-    padding-top: 65px;
     background-color: $dark-bkg;
     color: $light-text;
+    @include responsive(pt, 70, 40);
+
     &__figure {
         text-align: center;
         width: 300px;
         margin: auto;
         margin-bottom: 16px;
+
+        @include responsive(w, 300, 230);
 
     }
     &__image {
@@ -16,10 +19,13 @@
     }
     &__nav {
         margin: auto;
-        margin-bottom: 55px;
+        @include responsive(mb, 55, 30);
         ul {
             display: flex;
+            flex-wrap: wrap;
             justify-content: center;
+            align-items: center;
+            @include mq('flex-direction', 'column', $xs);
         }
         li {
             list-style: none;
@@ -43,27 +49,33 @@
         align-items: center;
         padding-top: 25px;
         padding-bottom: 25px;
+        @include mq('flex-wrap', 'wrap', $lg);
+        @include mq('justify-content', 'center', $lg);
     }
     &__socials {
         display: flex;
+        @include mq(mb, 12, $lg);
     }
     &__social {
-        width: 40px;
-        height: 40px;
         padding: 5px;
         display: block;
         background-color: $success-bkg;
         border-radius: 50%;
-        margin-right: 12px;
+        @include responsive(mr, 12, 6);
+        @include responsive(w, 40, 34);
+        @include responsive(h, 40, 34);
     }
     &__copyright {
+        @include mq(mb, 12, $lg);
     }
     &__copyright-text {
-        display: inline-block;
-        padding-left: 12px;
-        padding-right: 12px;
+        display: inline-block;;
         margin: 0;
         position:relative;
+        text-align: center;
+        @include responsive(pl, 12, 6);
+        @include responsive(pr, 12, 6);
+        @include responsive(fz, 17, 13);
 
         &::after {
             content: '';

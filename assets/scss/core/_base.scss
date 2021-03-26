@@ -26,11 +26,13 @@ img {
     color: $light-text;
     text-transform: uppercase;
     text-align: center;
+    @include responsive(fz, 50, 38);
+    @include responsive(lh, 59, 45);
 }
 .title {
     font-family: 'Raleway';
     font-weight: bold;
-    color: $orange-text;
+    color: $primary-title;
     @include responsive(fz, 38, 28);
     @include responsive(lh, 45, 32.9);
 }
@@ -55,28 +57,6 @@ img {
     line-height: 30px;
     @include responsive(fz, 22, 18);
     @include responsive(lh, 30, 24);
-}
-
-.btn {
-    @extend  .subtitle-small;
-    line-height: 1;
-    display: flex;
-    flex-direction: row;
-    justify-content: center;
-    align-items: center;
-    padding: 15px 45px;
-    border-radius: 60px;
-    text-transform: uppercase;
-    outline: none;
-
-    &--primary {
-        background-color: $primary;
-        color: $light-text;
-        min-width: 357px;
-        min-height: 58px;
-        margin: auto;
-        margin-bottom: 30px;
-    }
 }
 
 .line-right {

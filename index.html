@@ -14,18 +14,18 @@
   <header class="header">
     <div class="container">
       <a class="header__figure" href="/">
-        <figure class="header__figure">
-          <img claas="header__logo" src="./assets/img/logo.svg" alt="logo">
-        </figure>
+        <img claas="header__logo" src="./assets/img/logo.svg" alt="logo">
       </a>
-      <nav class="header__navigation">
-        <ul class="subtitle-small header__nav">
-          <li class="header__nav-item"><a href="/">Home</a></li>
-          <li class="header__nav-item"><a href="/">Development</a></li>
-          <li class="header__nav-item"><a href="/">Design</a></li>
-          <li class="header__nav-item"><a href="/">Contact</a></li>
-        </ul>
-      </nav>
+     <div class="header__container-nav">
+        <nav class="header__nav">
+          <ul class="subtitle-small">
+            <li class=""><a href="/">Home</a></li>
+            <li class=""><a href="/">Development</a></li>
+            <li class=""><a href="/">Design</a></li>
+            <li class=""><a href="/">Contact</a></li>
+          </ul>
+        </nav>
+     </div>
     </div>
   </header>
 
@@ -46,12 +46,12 @@
     </div>
     <div class="container">
       <div class="row">
-        <div class="col-sm-2">
+        <div class="col-md-2">
           <figure class="profile__figure">
             <img class="profile__image" src="./assets/img/perfil.png" alt="profile">
           </figure>
         </div>
-        <div class="col-sm-10">
+        <div class="col-md-10">
           <div class="profile__content">
             <h2 class="title profile__title"> Asbel Jhonatan Apaza Romero</h2>
             <h3 class="subtitle profile__subtitle"> Desarrollador Web Frontend</h3>
@@ -65,7 +65,7 @@
 
           <div class="profile__content">
             <div class="row">
-              <div class="col-md-6">
+              <div class="col-md-5 col-lg-6">
                 <h3 class="subtitle profile__subtitle">Contact Details</h3>
                 <ul class="description profile__description">
                   <li>Cochabamba - Bolivia</li>
@@ -77,7 +77,7 @@
                   </li>
                 </ul>
               </div>
-              <div class="col-md-6">
+              <div class="col-md-7 col-lg-6">
                 <form method="get" action="./assets/media/CV_AJAR-ES.pdf">
                   <button class="btn btn--primary profile__btn" type="submit"
                   download="">Descargar Resumen</button>
@@ -104,7 +104,45 @@
               </figure>
               <span class="description skill__item-title">HTML5</span>
               <div class="skill__bar">
-                <span class="description skill__bar-percent">76%</span>
+                <span class="description skill__bar-percent" style="width: 99%;"></span>
+              </div>
+            </div>
+
+            <!--  -->
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">CSS5</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 99%;"></span>
+              </div>
+            </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">JavaScript</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 80%;">80%</span>
+              </div>
+            </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">ReactJS</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 70%;">70%</span>
+              </div>
+            </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">CMS Wordpress</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 76%;">76%</span>
               </div>
             </div>
             <div class="skill__item">
@@ -113,9 +151,56 @@
               </figure>
               <span class="description skill__item-title">HTML5</span>
               <div class="skill__bar">
-                <span class="description skill__bar-percent">76%</span>
+                <span class="description skill__bar-percent" style="width: 76%;">76%</span>
               </div>
             </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">HTML5</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 76%;">76%</span>
+              </div>
+            </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">HTML5</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 76%;">76%</span>
+              </div>
+            </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">HTML5</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 76%;">76%</span>
+              </div>
+            </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">HTML5</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 76%;">76%</span>
+              </div>
+            </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
+                <img src="./assets/img/html5.png" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">HTML5</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 76%;">76%</span>
+              </div>
+            </div>
+            <!--  -->
+
           </div>
         </section>
 
@@ -165,14 +250,14 @@
           <div class="col-md-6">
             <div class="project__item">
               <figure class="project__item-figure">
-                <img src="./assets/img/portfolio.jpg" alt="portfolio">
+                <img class="project__item-image" src="./assets/img/portfolio.jpg" alt="portfolio">
               </figure>
               <h3 class="subtitle project__item-title">Portfolio en Figma</h3>
               <p class="description project__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quasi fuga, aspernatur dolorum laborum neque obcaecati consequatur quisquam error inventore doloremque
                 culpa ullam ducimus, id accusamus, quia accusantium vitae sed ad cumque? Est, obcaecati. Dolore cum
                 labore facilis aspernatur voluptate eos omnis libero totam fugiat perspiciatis.</p>
-              <button class="btn btn--primary project__btn" type="button">Ver Mas</button>
+              <button class="btn btn--primary project__item-btn" type="button">Ver Mas</button>
             </div>
           </div>
 
@@ -180,40 +265,40 @@
           <div class="col-md-6">
             <div class="project__item">
               <figure class="project__item-figure">
-                <img src="./assets/img/portfolio.jpg" alt="portfolio">
+                <img class="project__item-image" src="./assets/img/portfolio.jpg" alt="portfolio">
               </figure>
               <h3 class="subtitle project__item-title">Portfolio en Figma</h3>
               <p class="description project__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quasi fuga, aspernatur dolorum laborum neque obcaecati consequatur quisquam error inventore doloremque
                 culpa ullam ducimus, id accusamus, quia accusantium vitae sed ad cumque? Est, obcaecati. Dolore cum
                 labore facilis aspernatur voluptate eos omnis libero totam fugiat perspiciatis.</p>
-              <button class="btn btn--primary project__btn" type="button">Ver Mas</button>
+              <button class="btn btn--primary project__item-btn" type="button">Ver Mas</button>
             </div>
           </div>
           <div class="col-md-6">
             <div class="project__item">
               <figure class="project__item-figure">
-                <img src="./assets/img/portfolio.jpg" alt="portfolio">
+                <img class="project__item-image" src="./assets/img/portfolio.jpg" alt="portfolio">
               </figure>
               <h3 class="subtitle project__item-title">Portfolio en Figma</h3>
               <p class="description project__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quasi fuga, aspernatur dolorum laborum neque obcaecati consequatur quisquam error inventore doloremque
                 culpa ullam ducimus, id accusamus, quia accusantium vitae sed ad cumque? Est, obcaecati. Dolore cum
                 labore facilis aspernatur voluptate eos omnis libero totam fugiat perspiciatis.</p>
-              <button class="btn btn--primary project__btn" type="button">Ver Mas</button>
+              <button class="btn btn--primary project__item-btn" type="button">Ver Mas</button>
             </div>
           </div>
           <div class="col-md-6">
             <div class="project__item">
               <figure class="project__item-figure">
-                <img src="./assets/img/portfolio.jpg" alt="portfolio">
+                <img class="project__item-image" src="./assets/img/portfolio.jpg" alt="portfolio">
               </figure>
               <h3 class="subtitle project__item-title">Portfolio en Figma</h3>
               <p class="description project__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
                 Quasi fuga, aspernatur dolorum laborum neque obcaecati consequatur quisquam error inventore doloremque
                 culpa ullam ducimus, id accusamus, quia accusantium vitae sed ad cumque? Est, obcaecati. Dolore cum
                 labore facilis aspernatur voluptate eos omnis libero totam fugiat perspiciatis.</p>
-              <button class="btn btn--primary project__btn" type="button">Ver Mas</button>
+              <button class="btn btn--primary project__item-btn" type="button">Ver Mas</button>
             </div>
           </div>
 

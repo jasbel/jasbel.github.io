@@ -9,26 +9,35 @@
     }
     &__figure {
         max-width: 354px;
+        @include responsive(maxw, 354, 200, $xxl, $md);
         margin: 0;
     }
+    &__logo { }
     &__navigation {
         color: $light-text
     }
     &__nav {
-        display: flex;
-    }
-    &__nav-item {
-        display: block;
-        padding: 0 40px;
-        &:last-child {
-            padding-right: 0;
-        }
-        a {
-            color: $light-text;
-            text-decoration: none;
-            &:hover {
-                color: $primary-text;
-                text-decoration: underline;
+        > ul {
+            @include responsive(fz, 24, 16);
+            display: flex;
+
+            > li {
+                display: block;
+                padding: 0;
+                @include responsive(pl, 40, 10, $xxl, $md);
+                @include responsive(pr, 40, 10, $xxl, $md);
+
+                &:last-child {
+                    padding-right: 0;
+                }
+                a {
+                    color: $light-text;
+                    text-decoration: none;
+                    &:hover {
+                        color: $primary-text;
+                        text-decoration: underline;
+                    }
+                }
             }
         }
     }
