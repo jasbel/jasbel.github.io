@@ -1,0 +1,111 @@
+/// placeholder https://sass-lang.com/documentation/style-rules/placeholder-selectors
+//---------------------------------//
+
+//heading
+%heading {
+    font-family: $font-family-heading;
+    font-size: $font-size-heading;
+    // line-height: 110%;
+    @include responsive(lh, 77);
+    font-weight: bold;
+    color: $color-text-primary;
+}
+%title {
+    font-family: $font-family-heading;
+    @include responsive(fz, $font-size-title, $font-size-title-mobile);
+    // line-height: 110%;
+    @include responsive(lh, 55, 35 );
+    font-weight: bold;
+    color: $color-text-primary;
+    // text-align: center;
+}
+
+%subtitle {
+    font-family: $font-family-heading;
+    // font-size: $font-size-subtitle;
+    @include responsive(fz, $font-size-subtitle, $font-size-subtitle-mobile);
+    @include responsive(lh, 46, 31);
+    font-weight: bold;
+    color: $color-text-primary;
+}
+
+%subtitle-small {
+    font-family: $font-family-heading;
+    font-size: $font-size-subtitle-small;
+    @include responsive(fz, $font-size-subtitle-small, $font-size-subtitle-smaller);
+    @include responsive(lh, 31);
+    font-weight: bold;
+    color: $color-text-primary;
+}
+
+%subtitle-smaller {
+    font-family: $font-family-heading;
+    // font-size: $font-size-subtitle-smaller;
+    @include responsive(fz, $font-size-subtitle-smaller, $font-size-large);
+    @include responsive(lh, 24);
+    font-weight: bold;
+    color: $color-text-primary;
+}
+
+%subtitle-smallest {
+    font-family: $font-family-heading;
+    font-size: $font-size-subtitle-smallest;
+    font-weight: bold;
+    color: $color-text-primary;
+}
+
+//Content or description text
+%text-large {
+    font-family: $font-family;
+    @include responsive(fz, $font-size-large, $font-size-default);
+    @include responsive(lh, 29);
+}
+%text {
+    font-family: $font-family;
+    @include responsive(fz, $font-size-default, $font-size-mobile);
+    @include responsive(lh, 26, 23);
+}
+%text-small {
+    font-family: $font-family;
+    @include responsive(fz, $font-size-small, $font-size-mobile-small);
+    @include responsive(lh, 22, 20);
+}
+
+
+//buttons
+%btn {
+    width: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    font-family: $font-family-link;
+    font-weight: bold;
+    text-transform: uppercase;
+    color: $color-white;
+    background-color: $color-primary;
+    border-radius:100px;
+    padding: 16.5px;
+    text-decoration: none;
+
+    @include responsive(fz, $font-size-large);
+    @include responsive(lh, 28.6);
+    &:hover {
+        color: $color-white;
+        background-color: darken($color: $color-primary, $amount: 0.5);
+        text-decoration: none;
+    }
+}
+
+// Space section default
+%space-top-bottom {
+    @include responsive(pt, 70, 40);
+    @include responsive(pb, 80, 40);
+}
+
+%space-top {
+    @include responsive(pt, 70, 40);
+}
+
+%space-bottom {
+    @include responsive(pb, 80, 40);
+}

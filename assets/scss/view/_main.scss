@@ -2,9 +2,15 @@
 
 /* Profile */
 .profile {
+    background-color: $silver-bkg;
     padding-top: 100px;
     padding-bottom: 40px;
+    position: relative;
+
     &__ola-container {
+        position: absolute;
+        bottom: 0;
+        transform: translateY(100%);
     }
     &__figure {
         max-width: 300px;
@@ -43,19 +49,8 @@
 
 /* Sckiill and social */
 .skill-social {
-    .container {
-        display: flex;
-        justify-content: space-between;
-        > div {
-            &:first-child {
-                width: 60%;
-            }
-            &:last-child {
-                width: 40%;
-            }
-
-        }
-    }
+    padding-top: 140px;
+    padding-bottom: 50px;
 }
 
 /* Skill */
@@ -214,7 +209,6 @@
         align-items: center;
         max-width: 1000px;
         margin: auto;
-        margin-bottom: 30px;
     }
     &__label {
         width: 100%;
@@ -227,5 +221,6 @@
     }
     &__btn {
         min-width: auto;
+        margin-bottom: 0;
     }
 }

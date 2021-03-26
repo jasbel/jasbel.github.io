@@ -1,0 +1,554 @@
+
+
+//How to use:   @include  font-responsive(26, 20)
+// font-size: calc(16px + (26 - 16) * ((100vw - 300px) / (1600 - 300))) ;
+@mixin font-responsive($f-max, $f-min: $font-size-small, $w-max: $desktop-responsive, $w-min: $phone-responsive) {
+
+    $f-min-px: $f-min + px;
+    $w-min-px: $w-min + px;
+    $font-size: $f-max + px;
+    $desktop-px: $desktop-responsive * 1px;
+    $phone-px: $phone-responsive * 1px;
+    font-size: $font-size;
+
+    @if( $w-max == $desktop-responsive and $w-min == $phone-responsive) {
+        @media (max-width: $desktop-px) {
+            & {
+                font-size: calc( #{$f-min-px} + (#{$f-max} - #{$f-min}) * ((100vw - #{$w-min-px}) / (#{$w-max} - #{$w-min})));
+            }
+        }
+        @media (max-width: $phone-px) {
+            & {
+                font-size:  #{$f-min-px} ;
+            }
+        }
+    } @else {
+        font-size: calc( #{$f-min-px} + (#{$f-max} - #{$f-min}) * ((100vw - #{$w-min-px}) / (#{$w-max} - #{$w-min})));
+        @media (max-width: $w-min-px) {
+            & {
+                font-size:  #{$f-min-px} ;
+            }
+        }
+    }
+    
+}
+
+
+//How to use:   @include responsive(font-size, 60, 39, 1440, 375) or  @include  responsive(fz, 60, 39, 1440, 375) or  @include  responsive(fz, 60px, 39px, 1440, 375, false)
+@mixin responsive($attr:'', $size-max:'', $size-min: '', $w-max: $desktop-responsive, $w-min: $phone-responsive, $only-med-query: false  ) {
+
+    @if $size-min == '' {
+        $size-min: $size-max;
+    }
+
+    //conditional if attributes exist px
+    @if str-index(#{$size-max}, 'px') != null {
+        $size-max:  str-slice(#{$size-max}, 1, str-index(#{$size-max}, 'px') - 1);
+    }
+    @if str-index(#{$size-min}, 'px') != null {
+        $size-min:  str-slice(#{$size-min}, 1, str-index(#{$size-min}, 'px') - 1);
+    }
+    @if str-index(#{$w-max}, 'px') != null {
+        $w-max:  str-slice(#{$w-max}, 1, str-index(#{$w-max}, 'px') - 1);
+    }
+    @if str-index(#{$w-min}, 'px') != null {
+        $w-min:  str-slice(#{$w-min}, 1, str-index(#{$w-min}, 'px') - 1);
+    }
+    
+    $size-max-px: $size-max + px;
+    $size-min-px: $size-min + px;
+    $w-max-px: $w-max + px;
+    $w-min-px: $w-min + px;
+    $desktop-px: $desktop-responsive * 1px;
+    $phone-px: $phone-responsive * 1px;
+
+    $responsive-calc : calc(#{$size-min-px} + (#{$size-max} - #{$size-min}) * ((100vw - #{$w-min-px}) / (#{$w-max} - #{$w-min})));
+
+    $property-map: (
+        fz: font-size,
+        lh: line-height,
+        m: margin,
+        mt: margin-top,
+        mr: margin-right,
+        mb: margin-bottom,
+        ml: margin-left,
+        p: padding,
+        pt: padding-top,
+        pr: padding-right,
+        pb: padding-bottom,
+        pl: padding-left,
+        t: top,
+        l: left,
+        b: bottom,
+        r: right,
+        w: width,
+        mw: max-width,
+        mxw: max-width,
+        maxw: max-width,
+        mnw: min-width,
+        minw: min-width,
+        h: height,
+        mh: min-height,
+        mnh: min-height,
+        minh: min-height,
+        mxh: max-height,
+        maxh: max-height,
+    );
+
+    $property: '';
+
+    @if(map-has-key($property-map, $attr)) {
+        $property: map-get($property-map, $attr);
+    } @else {
+        $property: $attr;
+    }
+
+    @if( not $only-med-query ) {
+        //impress attribute your styles css
+        #{$property}: $size-max-px;
+    }
+
+    @if($size-max-px != $size-min-px) {
+
+        @media (max-width: #{$w-max-px}) {
+            #{$property}: $responsive-calc;
+        }
+
+        @media (max-width: #{$w-min-px}) {
+            #{$property}: #{$size-min-px};
+        }
+
+    }
+}
+
+//TODO: esta repitiendo con la otra responsive, rfatorizar codigo para que no se repita
+// Only Responsive Media query inline
+//How to use:   @include responsive-mq(fz, 60, 39, 1440) where
+// attr: Atributo de la propiedad
+// size-max: Valor maximo de la query inicial
+// size-min: Valor minimo de la query inicial
+// w-max: Pantalla maxima y Media query por defecto
+// w-min: Pantalla minima
+// two-mq: Si se requiere para la interrupcion de la segunda media query
+@mixin responsive-mq($attr:'', $size-max:'', $size-min: '', $w-max: $desktop-responsive, $w-min: $phone-responsive, $two-mq: false  ) {
+
+    @if $size-min == '' {
+        $size-min: $size-max;
+    }
+
+    //conditional if attributes exist px
+    @if str-index(#{$size-max}, 'px') != null {
+        $size-max:  str-slice(#{$size-max}, 1, str-index(#{$size-max}, 'px') - 1);
+    }
+    @if str-index(#{$size-min}, 'px') != null {
+        $size-min:  str-slice(#{$size-min}, 1, str-index(#{$size-min}, 'px') - 1);
+    }
+    @if str-index(#{$w-max}, 'px') != null {
+        $w-max:  str-slice(#{$w-max}, 1, str-index(#{$w-max}, 'px') - 1);
+    }
+    @if str-index(#{$w-min}, 'px') != null {
+        $w-min:  str-slice(#{$w-min}, 1, str-index(#{$w-min}, 'px') - 1);
+    }
+    
+    $size-max-px: $size-max + px;
+    $size-min-px: $size-min + px;
+    $w-max-px: $w-max + px;
+    $w-min-px: $w-min + px;
+    $desktop-px: $desktop-responsive * 1px;
+    $phone-px: $phone-responsive * 1px;
+
+    $responsive-calc : calc(#{$size-min-px} + (#{$size-max} - #{$size-min}) * ((100vw - #{$w-min-px}) / (#{$w-max} - #{$w-min})));
+
+    $property-map: (
+        fz: font-size,
+        lh: line-height,
+        m: margin,
+        mt: margin-top,
+        mr: margin-right,
+        mb: margin-bottom,
+        ml: margin-left,
+        p: padding,
+        pt: padding-top,
+        pr: padding-right,
+        pb: padding-bottom,
+        pl: padding-left,
+        t: top,
+        l: left,
+        b: bottom,
+        r: right,
+        w: width,
+        mw: max-width,
+        mxw: max-width,
+        maxw: max-width,
+        mnw: min-width,
+        minw: min-width,
+        h: height,
+        mh: min-height,
+        mnh: min-height,
+        minh: min-height,
+        mxh: max-height,
+        maxh: max-height,
+    );
+
+    $property: '';
+
+    @if(map-has-key($property-map, $attr)) {
+        $property: map-get($property-map, $attr);
+    } @else {
+        $property: $attr;
+    }
+
+    @media (max-width: #{$w-max-px}) {
+        #{$property}: $responsive-calc;
+    }
+
+    @if($two-mq ) {
+        @if($size-max-px != $size-min-px) {
+            @media (max-width: #{$w-min-px}) {
+                #{$property}: #{$size-min-px};
+            }
+        }
+    }
+}
+
+// Only Responsive Media query inline
+//How to use:   @include mq(fz, 60, 1440)
+@mixin mq($attr:'', $size:'',  $screen: $desktop-responsive) {
+
+
+    //conditional if attributes exist px
+    @if str-index(#{$size}, 'px') != null {
+        $size:  str-slice(#{$size}, 1, str-index(#{$size}, 'px') - 1);
+    }
+
+    @if str-index(#{$screen}, 'px') != null {
+        $screen:  str-slice(#{$screen}, 1, str-index(#{$screen}, 'px') - 1);
+    }
+
+    $property-map: (
+        fz: font-size,
+        lh: line-height,
+        m: margin,
+        mt: margin-top,
+        mr: margin-right,
+        mb: margin-bottom,
+        ml: margin-left,
+        p: padding,
+        pt: padding-top,
+        pr: padding-right,
+        pb: padding-bottom,
+        pl: padding-left,
+        t: top,
+        l: left,
+        b: bottom,
+        r: right,
+        w: width,
+        mw: max-width,
+        mxw: max-width,
+        maxw: max-width,
+        mnw: min-width,
+        minw: min-width,
+        h: height,
+        mh: min-height,
+        mnh: min-height,
+        minh: min-height,
+        mxh: max-height,
+        maxh: max-height,
+    );
+
+    $property: '';
+
+    @if(map-has-key($property-map, $attr)) {
+        $property: map-get($property-map, $attr);
+    } @else {
+        $property: $attr;
+    }
+
+    $size-px: '';
+
+    
+
+    @if(type-of($size) == 'string') {
+        $size-px: #{$size};
+    } @else {
+        // @if($size != 'auto' and $size != 'none' and $size != 'unset' and $size != 'initial' and $size != 'inherit' and $size != 'center'  and $size != 'absolute'  and $size != 'relative') {
+            $size-px: $size + px;
+    }
+    
+    $screen-px: $screen + px;
+
+    @media (max-width: #{$screen-px}) {
+        #{$property}: $size-px;
+    }
+}
+
+@mixin padding-responsive( $pt-max:"", $pt-min:"", $pr-max:"", $pr-min:"", $pb-max:"", $pb-min:"", $pl-max:"", $pl-min:"", $w-max: $desktop-responsive, $w-min: $phone-responsive ) {
+    @if $pt-max!="" and $pt-min!="" {
+        padding-top: responsive($pt-max, $pt-min, $w-max, $w-min) ;
+        @if $pr-max!="" and $pr-min!="" {
+            padding-right: responsive($pr-max, $pr-min, $w-max, $w-min) ;
+            @if $pb-max!="" and $pb-min!="" {
+                padding-bottom: responsive($pb-max, $pb-min, $w-max, $w-min) ;
+                @if $pl-max!="" and $pl-min!="" {
+                    padding-left: responsive($pl-max, $pl-min, $w-max, $w-min) ;
+                } @else {
+                    padding-left: responsive($pr-max, $pr-min, $w-max, $w-min) ;
+                }
+            } @else {
+                padding-bottom: responsive($pt-max, $pt-min, $w-max, $w-min) ;
+                padding-left: responsive($pr-max, $pr-min, $w-max, $w-min) ;
+            }
+
+        } @else {
+            padding-right: responsive($pt-max, $pt-min, $w-max, $w-min) ;
+            padding-bottom: responsive($pt-max, $pt-min, $w-max, $w-min) ;
+            padding-left: responsive($pt-max, $pt-min, $w-max, $w-min) ;
+        }
+    }
+}
+
+@mixin margin-responsive( $mt-max:"", $mt-min:"", $mr-max:"", $mr-min:"", $mb-max:"", $mb-min:"", $ml-max:"", $ml-min:"", $w-max: $desktop-responsive, $w-min: $phone-responsive ) {
+    @if $mt-max!="" and $mt-min!="" {
+        @include responsive(mt, $mt-max, $mt-min, $w-max, $w-min) ;
+        @if $mr-max!="" and $mr-min!="" {
+            @include responsive(mr, $mr-max, $mr-min, $w-max, $w-min) ;
+            @if $mb-max!="" and $mb-min!="" {
+                @include responsive(mb, $mb-max, $mb-min, $w-max, $w-min) ;
+                @if $ml-max!="" and $ml-min!="" {
+                    @include responsive(ml, $ml-max, $ml-min, $w-max, $w-min) ;
+                } @else {
+                    @include responsive(ml, $mr-max, $mr-min, $w-max, $w-min) ;
+                }
+            } @else {
+                @include responsive(mb, $mt-max, $mt-min, $w-max, $w-min) ;
+                @include responsive(ml, $mr-max, $mr-min, $w-max, $w-min) ;
+            }
+
+        } @else {
+            @include responsive(mr, $mt-max, $mt-min, $w-max, $w-min) ;
+            @include responsive(mb, $mt-max, $mt-min, $w-max, $w-min) ;
+            @include responsive(ml, $mt-max, $mt-min, $w-max, $w-min) ;
+        }
+    }
+}
+
+@mixin max-width-center($mwidth) {
+    max-width: $mwidth + px;
+    margin-right: auto;
+    margin-left: auto;
+}
+
+
+// @mixin font-size($size) {
+//     font-size: calculate-rem($size);
+// }
+
+// @mixin font-size($size, $base: 16) {
+//     font-size: $size; // fallback for old browsers
+//     font-size: ($size / $base) * 1rem;
+// }
+
+// How to use: @include font-face("MyFont", "path/to/MyFont", $style: normal, $weight: normal);
+@mixin font-face($font-name, $file-name, $weight: normal, $style: normal) {
+    @font-face {
+        font-family: quote($font-name);
+        src: url($file-name + '.eot');
+        src: url($file-name + '.eot?#iefix') format('embedded-opentype'),
+        url($file-name + '.woff') format('woff'),
+        url($file-name + '.ttf') format('truetype'),
+        url($file-name + '.svg##{$font-name}') format('svg');
+        font-weight: $weight;
+        font-style: $style;
+    }
+}
+
+// How to use   @include roundedCorners(10);
+@mixin roundedCorners($size) {
+    -webkit-border-radius: $size + px;
+    -moz-border-radius: $size + px;
+    border-radius: $size + px;
+}
+
+// How to use   @include backgroundImage($background-position, $background-color, $background-size);
+@mixin backgroundImage( $background-position, $background-color, $background-size) {
+    background-repeat: no-repeat;
+    background-position: $background-position;
+    background-color: $background-color;
+    background-size: $background-size;
+}
+
+@mixin flexCenter($align: left) {
+    display: -ms-flexbox;
+    display: -webkit-flex;
+    display: flex;
+    @if $align == vertical {
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        align-items: center;
+    } @else {
+        -ms-flex-align: center;
+        -webkit-align-items: center;
+        -webkit-box-align: center;
+        align-items: center;
+        justify-content: $align;
+        -ms-flex-pack: $align;
+    }
+}
+
+@mixin inlineFlexCenter($align: left) {
+    display: -webkit-inline-flex;
+    display: -ms-inline-flexbox;
+    display: inline-flex;
+    -ms-flex-align: center;
+    -webkit-align-items: center;
+    -webkit-box-align: center;
+    align-items: center;
+    justify-content: $align;
+    -ms-flex-pack: $align;
+}
+
+@mixin min-wh($width: "", $height: "") {
+    @if $width!= "" {
+        min-width: $width + px;
+    }
+    @if $height!= "" {
+        min-height: $height + px;
+    }
+}
+
+// // --------------------------------------------------
+// // contexts
+// @mixin when-inside($selector) {
+//     #{$selector} & {
+//         @content;
+//     }
+// }
+
+// // --------------------------------------------------
+// // aspect ratio
+// // e.g. @include aspect-ratio(16,9);
+// // expects child to have class of `.content` (could be changed to a wildcard `*`)
+// @mixin aspect-ratio($width, $height) {
+//     position: relative;
+//     &::before {
+//         content: '';
+//         display: block;
+//         padding-top: ($height / $width) * 100%;
+//         width: 100%;
+//     }
+//     >.content {
+//         bottom: 0;
+//         left: 0;
+//         position: absolute;
+//         right: 0;
+//         top: 0;
+//     }
+// }
+
+// //How to use: @include css3-prefix(transform, scale3d(2.5, 2, 1.5));
+// @mixin css3-prefix($prop, $value) {
+//     -webkit-#{$prop}: #{$value};
+//     -moz-#{$prop}: #{$value};
+//     -ms-#{$prop}: #{$value};
+//     -o-#{$prop}: #{$value};
+//     #{$prop}: #{$value};
+// }
+
+// //How to use: @include vertical-center();
+// @mixin vertical-center {
+//     position: relative;
+//     top: 50%;
+//     -ms-transform: translateY(-50%);
+//     -webkit-transform: translateY(-50%);
+//     transform: translateY(-50%);
+// }
+
+// //How to use:
+// // @include keyframes(background) {
+// //    0% {
+// //     background: white;
+// //   }
+// //   50% {
+// //     background: lightblue;
+// //   }
+// //   100% {
+// //     background: royalblue;
+// //   }
+// // }
+// @mixin keyframes($name) {
+//     @-webkit-keyframes #{$name} {
+//         @content;
+//     }
+//     @-moz-keyframes #{$name} {
+//         @content;
+//     }
+//     @keyframes #{$name} {
+//         @content;
+//     }
+// }
+
+// //How to use:  @include abs-position(100px, 100px, auto, auto);
+// @mixin abs-position($top, $right, $bottom, $left) {
+//     position: absolute;
+//     top: $top;
+//     right: $right;
+//     bottom: $bottom;
+//     left: $left;
+// }
+
+// //How to use:  @include clearfix;
+// @mixin clearfix {
+//     &:after {
+//         content: '';
+//         display: table;
+//         clear: both;
+//     }
+// }
+
+// //How to use:  @include opacity(.4);
+// @mixin opacity($opacity) {
+//     opacity: $opacity;
+//     $opacity-ie: $opacity * 100;
+//     filter: alpha(opacity=$opacity-ie); //IE8
+// }
+
+
+// //How to use:   @include gradient(#07c, #06f, vertical);
+// @mixin gradient($start-color, $end-color, $orientation) {
+//     background: $start-color;
+//     @if $orientation=='vertical' {
+//         background: -webkit-linear-gradient(top, $start-color, $end-color);
+//         background: linear-gradient(to bottom, $start-color, $end-color);
+//     }
+//     @else if $orientation=='horizontal' {
+//         background: -webkit-linear-gradient(left, $start-color, $end-color);
+//         background: linear-gradient(to right, $start-color, $end-color);
+//     }
+//     @else {
+//         background: -webkit-radial-gradient( center, ellipse cover, $start-color, $end-color);
+//         background: radial-gradient(ellipse at center, $start-color, $end-color);
+//     }
+// }
+
+//unifica la variable para
+// 
+//  .wrapper .field {
+//     @include unify-parent("input") {
+//       /* ... */
+//     }
+//     @include unify-parent("select") {
+//       /* ... */
+//     }
+//   }
+
+//   results
+
+//   .wrapper input.field {
+//     /* ... */
+//   }
+  
+//   .wrapper select.field {
+//     /* ... */
+//   }
+//

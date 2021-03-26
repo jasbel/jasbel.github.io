@@ -1,10 +1,12 @@
 {
   "name": "Oficial-Portfolio",
   "version": "1.0.0",
-  "description": "",
+  "description": "Portaforio Oficial con HTML5, CSS3, JavaScript",
   "main": "index.js",
   "dependencies": {
-    "bootstrap": "^5.0.0-beta2"
+    "bootstrap": "^5.0.0-beta2",
+    "express": "^4.17.1",
+    "ejs": "^3.1.6"
   },
   "devDependencies": {
     "autoprefixer": "^9.7.0",
@@ -20,7 +22,9 @@
   },
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1",
-    "serve": "serve -l 3000"
+    "serve": "serve -l 3000",
+    "start": "node server.js",
+    "gulp": "gulp"
   },
   "repository": {
     "type": "git",

@@ -1,14 +1,143 @@
-/* Variables  */
+// ---------------------------------- \\
+// Fonts
+// ---------------------------------- \\
+// @import url('https://fonts.googleapis.com/css2?family=Barlow:wght@300;400;500;600;700&display=swap');
+// @import url('https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap');
+
+
+/// Colors
 $primary: #046DB3;
-$dark: #011F33;
-$orange: #B44A04;
+$secondary:#E1E1E1 ; // light
+$success:#17B87D ; //green
+$info: #1752B8; //blue-dark
+$warning:#F45030; //orange
+$danger: #B82C17; //red
+
+$white: #fff;
+$light: #E8F6FF;
+$orange: #F45030;
 $green: #04B485;
+$dark: #011F33;
+$black: #000;
 
-$primary-text: #B44A04;
-$orange-text: #B44A04;
+$text: #052328; //blue black
+$primary-text: #F45030;
+$primary-text: $primary; //primary color
+$orange-text: #F45030;
 $dark-text: #011F33;
+$silver-text: #F3FBFF;
 $light-text: #E8F6FF;
+$dark-text: #020C0D; //dark
+$light-text: #F5FDFE; //light
+$white-text: $white; //white
 
+$body-bkg: $white; //white
 $dark-bkg: #011F33;
 $light-bkg: #E8F6FF;
-$white-bkg: white;
+$silver-bkg: #F3FBFF;
+$white-bkg: $white;
+$light-bkg: $light-text; //light
+$success-bkg:#17B87D ; //green
+
+$base: $text; //blue dark
+$link: $primary; //skyblue
+
+
+//custom property
+
+
+$color-shadow-default: rgba(0, 0, 0, 0.25);
+
+
+// ---------------------------------- \\
+// Layout Breakpoints
+// ---------------------------------- \\
+$max-width: 1280px;
+
+// ---------------------------------- \\
+// Font Families
+// ---------------------------------- \\
+$font-family-heading: 'Montserrat', sans-serif;
+$font-family: 'Open Sans', sans-serif;
+$font-weight: normal;
+$line-height: 30px;
+
+//Custom
+$font-family-link: $font-family;
+
+// ---------------------------------- \\
+// Font Sizes Default
+// ---------------------------------- \\
+$font-size-heading: 70px;
+$font-size-title: 50px;
+$font-size-subtitle: 42px;
+$font-size-subtitle-small: 28px;
+$font-size-subtitle-smaller: 22px;
+$font-size-subtitle-smallest: 16px;
+$font-size-large: 21px;
+$font-size-default: 19px;
+$font-size-small: 16px;
+
+$font-size-heading-mobile: 42px;
+$font-size-title-mobile: 32px;
+$font-size-subtitle-mobile: 26px;
+$font-size-mobile: 17px;
+$font-size-mobile-small: 15px;
+
+
+// ---------------------------------- \\
+// Colors Default
+// ---------------------------------- \\
+
+
+
+// ---------------------------------- \\
+// Boostrap 5 change value
+// ---------------------------------- \\
+// Grid Bootstrap ?
+$grid-columns: 12;
+//disable important in b5 (!default)
+$enable-important-utilities:  false;
+
+// ---------------------------------- \\
+// Variables for Media queries and B5
+// ---------------------------------- \\
+
+//by mediaquery inline or @include
+$xxs: 360;
+$xs: 420;
+$sm: 576;
+$md: 768;
+$lg: 992;
+$xl: 1200;
+$xxl: 1440;
+
+//by mixin
+$phone-responsive: $xxs;
+$tablet-responsive: $lg;
+$desktop-responsive: $xxl;
+
+//by media query block
+$phone-x-small: $xxs + px;
+$phone-default: $phone-x-small; //default
+$phone-small: ($xs - 0.02) + px;
+$phone: ($sm - 0.02) + px; //use b5
+$phone-large: ($md - 0.02) + px; //use b5
+$tablet-small: 790px;
+$tablet: ($lg - 0.02) + px; //use b5
+$tablet-default: $tablet; //use b5
+$desktop-small: 1090px;
+$desktop: ($xl - 0.02) + px; //use b5
+$desktop-medium: ($xxl - 0.02) + px; //use b5
+$desktop-default: $desktop-medium; //default
+$desktop-large: 1650px;
+$desktop-x-large: 1950px;
+
+// ---------------------------------- \\
+// Responsive Variables for responsive mixins
+// ---------------------------------- \\
+
+
+
+
+

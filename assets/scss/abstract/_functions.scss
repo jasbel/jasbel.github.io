@@ -1,0 +1,18 @@
+// --------------------------------------------------
+
+
+@function responsive($max, $min: "", $w-max: $desktop-responsive, $w-min: $phone-responsive ) {
+
+    @if( $min == "" or $max == $min) {
+        @return $max + px;
+    }
+    $min-px: $min + px;
+    $w-min-px: $w-min + px;
+    $result: calc( #{$min-px} + (#{$max} - #{$min}) * ((100vw - #{$w-min-px}) / (#{$w-max} - #{$w-min})));
+    @return $result;
+}
+// font size
+// @function calculate-rem($size) {
+//     $rem-size: $size / 16px;
+//     @return $rem-size * 1rem;
+// }

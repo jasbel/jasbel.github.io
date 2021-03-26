@@ -9,4 +9,11 @@
     padding: 12px;
     min-height: 58px;
     width: 100%;
+    font-size: 22px;
+    font-weight: 600;
+    color: $dark-text;
+
+    &::placeholder {
+        color: $dark-text;
+    }
 }

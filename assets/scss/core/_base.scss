@@ -10,6 +10,16 @@ html {
     padding: 0;
 }
 
+body {
+    font-family: 'Open Sans', Arial, Helvetica, sans-serif;
+}
+
+
+img {
+    max-width: 100%;
+    height: auto;
+}
+
 /* Custom Class */
 
 .heading {
@@ -20,16 +30,16 @@ html {
 .title {
     font-family: 'Raleway';
     font-weight: bold;
-    font-size: 38px;
-    line-height: 45px;
     color: $orange-text;
+    @include responsive(fz, 38, 28);
+    @include responsive(lh, 45, 32.9);
 }
 .subtitle {
     font-family: 'Raleway';
     font-weight: bold;
-    font-size: 32px;
-    line-height: 38px;
     color: $dark-text;
+    @include responsive(fz, 32, 24);
+    @include responsive(lh, 38, 28);
 }
 .subtitle-small {
     font-family: 'Raleway';
@@ -40,9 +50,11 @@ html {
 .description {
     font-family: 'Open Sans';
     font-weight: normal;
+    color: $dark-text;
     font-size: 22px;
     line-height: 30px;
-    color: $dark-text;
+    @include responsive(fz, 22, 18);
+    @include responsive(lh, 30, 24);
 }
 
 .btn {
@@ -84,6 +96,9 @@ html {
 .ola {
     position: relative;
     width:100vw ;
+    margin-top: -2px;
+    margin-bottom: -2px;
+
     &__container {
         position: relative;
         width:100vw;
