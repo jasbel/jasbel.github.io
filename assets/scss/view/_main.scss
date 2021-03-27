@@ -185,6 +185,9 @@
             @include responsive(h, 80, 40);
             box-shadow: inset 0 -80px 30px -40px $light-bkg;
         }
+        &--full-view {
+            max-height: none;
+        }
     }
     &__item {
         background-color: $white-bkg;

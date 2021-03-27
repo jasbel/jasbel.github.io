@@ -15,6 +15,14 @@
     font-weight: 600;
     @include responsive(fz, 24, 22);
     @include mq(w, '100%', $sm);
+    transition: transform 0.23s ease-in-out;
+    text-decoration: none;
+
+    &:hover {
+        cursor: pointer;
+        text-decoration: none;
+        transform: translateY(1px);
+    }
 
     &--primary {
         background-color: $primary;

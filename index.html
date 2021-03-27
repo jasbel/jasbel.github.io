@@ -93,6 +93,8 @@
   <section class="skill-social">
     <div class="container">
       <div class="row">
+
+        <!-- Skill -->
         <section class="skill col-md-8">
           <h2 class="title skill__title"> Tecnologias Aprendidas </h2>
           <div class="skill__items">
@@ -127,6 +129,15 @@
             </div>
             <div class="skill__item">
               <figure class="skill__item-figure">
+                <img src="./assets/img/technology/bootstrap5.svg" alt="skill image" class="skill__item-image">
+              </figure>
+              <span class="description skill__item-title">Boostrap5</span>
+              <div class="skill__bar">
+                <span class="description skill__bar-percent" style="width: 100%;">100%</span>
+              </div>
+            </div>
+            <div class="skill__item">
+              <figure class="skill__item-figure">
                 <img src="./assets/img/technology/javascript.png" alt="skill image" class="skill__item-image">
               </figure>
               <span class="description skill__item-title">JavaScript</span>
@@ -136,7 +147,7 @@
             </div>
             <div class="skill__item">
               <figure class="skill__item-figure">
-                <img src="./assets/img/technology/reactjs.png" alt="skill image" class="skill__item-image">
+                <img src="./assets/img/technology/react.svg" alt="skill image" class="skill__item-image">
               </figure>
               <span class="description skill__item-title">ReactJS</span>
               <div class="skill__bar">
@@ -154,7 +165,7 @@
             </div>
             <div class="skill__item">
               <figure class="skill__item-figure">
-                <img src="./assets/img/technology/reactjs.png" alt="skill image" class="skill__item-image">
+                <img src="./assets/img/technology/react-native.svg" alt="skill image" class="skill__item-image">
               </figure>
               <span class="description skill__item-title">React Native</span>
               <div class="skill__bar">
@@ -237,7 +248,9 @@
 
           </div>
         </section>
+        <!-- End Skill -->
 
+        <!-- Social -->
         <section class="social col-md-4">
           <h2 class="title social__title"> Enlaces Sociales </h2>
           <div class="social__items">
@@ -281,7 +294,7 @@
   <section class="project">
     <div class="container">
       <h2 class="title project__title">Proyectos</h2>
-      <div class="project__items">
+      <div id="project-items" class="project__items">
         <div class="row">
           
           <div class="col-md-6">
@@ -310,40 +323,33 @@
           <div class="col-md-6">
             <div class="project__item">
               <figure class="project__item-figure">
-                <img class="project__item-image" src="./assets/img/portfolio.jpg" alt="portfolio">
+                <a href="https://www.iiotatlas.com"><img class="project__item-image" src="./assets/img/atlas.jpg" alt="Emprendimiento Atlas Connect"></a>
               </figure>
-              <h3 class="subtitle project__item-title">Portfolio en Figma</h3>
-              <p class="description project__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quasi fuga, aspernatur dolorum laborum neque obcaecati consequatur quisquam error inventore doloremque
-                culpa ullam ducimus, id accusamus, quia accusantium vitae sed ad cumque? Est, obcaecati. Dolore cum
-                labore facilis aspernatur voluptate eos omnis libero totam fugiat perspiciatis.</p>
-              <button class="btn btn--primary project__item-btn" type="button">Ver Mas</button>
+              <h3 class="subtitle project__item-title">Web - Atlas Connect</h3>
+              <p class="description project__item-description">Desarrollo del sitio web para el emprendimiento Atlas Connect, utilizando la tecnologia CMS Wordpress y las caracteristicas que corresponden</p>
+              <a class="btn btn--primary project__item-btn" href="https://iiotatlas.com/">Ver Sitio</a>
             </div>
           </div>
           
           <div class="col-md-6">
             <div class="project__item">
               <figure class="project__item-figure">
-                <img class="project__item-image" src="./assets/img/portfolio.jpg" alt="portfolio">
+                <a href="https://play.google.com/store/apps/details?id=com.himnoapp"><img class="project__item-image" src="./assets/img/himnoapp.jpg" alt="Aplicacion Mobil"></a>
+                
               </figure>
-              <h3 class="subtitle project__item-title">Portfolio en Figma</h3>
-              <p class="description project__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quasi fuga, aspernatur dolorum laborum neque obcaecati consequatur quisquam error inventore doloremque
-                culpa ullam ducimus, id accusamus, quia accusantium vitae sed ad cumque? Est, obcaecati. Dolore cum
-                labore facilis aspernatur voluptate eos omnis libero totam fugiat perspiciatis.</p>
+              <h3 class="subtitle project__item-title">App - HimnoApp</h3>
+              <p class="description project__item-description">Aplicacion Mobil para el sistemas operativo android, para visualizar los coros y canticos para las iglesia biblicas</p>
               <button class="btn btn--primary project__item-btn" type="button">Ver Mas</button>
             </div>
           </div>
+
           <div class="col-md-6">
             <div class="project__item">
               <figure class="project__item-figure">
                 <img class="project__item-image" src="./assets/img/portfolio.jpg" alt="portfolio">
               </figure>
-              <h3 class="subtitle project__item-title">Portfolio en Figma</h3>
-              <p class="description project__item-description">Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                Quasi fuga, aspernatur dolorum laborum neque obcaecati consequatur quisquam error inventore doloremque
-                culpa ullam ducimus, id accusamus, quia accusantium vitae sed ad cumque? Est, obcaecati. Dolore cum
-                labore facilis aspernatur voluptate eos omnis libero totam fugiat perspiciatis.</p>
+              <h3 class="subtitle project__item-title">Sistema de Monitoreo</h3>
+              <p class="description project__item-description">Sistema de Monitoreo e implementacion de internet de las cosas industriales. En proceso ...</p>
               <button class="btn btn--primary project__item-btn" type="button">Ver Mas</button>
             </div>
           </div>
@@ -351,7 +357,7 @@
 
         </div>
       </div>
-      <button class="btn btn--primary project__btn">Ver Mas Proyectos</button>
+      <button id="more-project" class="btn btn--primary project__btn" >Ver Mas</button>
     </div>
   </section>
 
@@ -364,13 +370,18 @@
       <h2 class="title contact__title">Contacto</h2>
 
       <form class="form contact__form">
-        <div class="form__control">
+        <!-- <div class="form__control">
           <label class="contact__label" for="email">
             <input class="input contact__input" id="email" type="email" placeholder="Correo Electronico">
           </label>
         </div>
         <div class="form__control">
           <button class="btn btn--primary contact__btn" type="submit"> Contactarme </button>
+        </div> -->
+        <div class="form__control">
+          <a class="btn btn--primary contact__btn" href ="mailto:asbel.elmec@gmail.com?subject=Contactar&Propuesta=Message">
+            Contactar
+            </a>
         </div>
       </form>
 
@@ -381,7 +392,7 @@
   <footer class="footer">
     <div class="container">
       <figure class="footer__figure">
-        <img src="./assets/img/logo-name.svg" alt="logo" class="footer__image">
+        <a href="/"><img src="./assets/img/logo-name.svg" alt="logo" class="footer__image"></a>
       </figure>
       <nav class="navigation footer__nav">
         <ul>
@@ -418,6 +429,8 @@
       </div>
     </div>
   </footer>
+
+  <script src="assets/js/scripts.js"></script>
 
 </body>
 
